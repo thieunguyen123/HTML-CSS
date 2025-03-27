@@ -1,0 +1,108 @@
+1./ Cấu trúc html: 
+
+/*
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiêu đề trang</title>
+  </head>
+
+  <body>
+    <h1>Tiêu đề chính</h1>
+  </body>
+</html>
+
+*/ Giải thích:
+<!DOCTYPE html>: Khai báo loại tài liệu HTML5.
+
+<html lang="vi">: Xác định ngôn ngữ là tiếng Việt.
+
+<head>: Chứa thông tin về trang (meta, tiêu đề, liên kết CSS...).
+
+<body>: Chứa nội dung chính hiển thị trên trình duyệt.
+
+2./ Các thẻ html thường dùng:
+
+  + Thẻ tiêu đề (Heading):
+    Khái niệm: Dùng để tạo các tiêu đề từ lớn đến nhỏ.
+    Ví dụ: <h1>Tiêu đề</h1>
+
+  + Thẻ đoạn văn (Paragraph):
+    Khái niệm: Dùng để tạo đoạn văn bản.
+    Ví dụ: <p>Đoạn văn</p>
+
+  + Thẻ liên kết (Anchor):
+    Khái niệm: Dùng để tạo đường dẫn.
+    Ví dụ: <a href="https://www.google.com" target="_blank">Google</a>
+
+  + Thẻ hình ảnh (Image):
+    Khái niệm: Dùng để hiển thị hình ảnh.
+    Ví dụ: <img src="image.jpg" alt="Mô tả">
+
+  + Thẻ khối, thường dùng để tạo bố cục trang.
+    Ví dụ: <div style="background: gray;">Khối div</div>  
+
+  + Thẻ danh sách:
+    * Danh sách không có thứ tự (<ul>):
+        Khái niệm: Dùng để tạo danh sách mà các mục không theo thứ tự nhất định.
+        Các mục được hiển thị với dấu đầu dòng.
+        Ví dụ:
+        <ul>
+            <li>Mục 1</li>
+            <li>Mục 2</li>
+        </ul>
+
+    * Danh sách có thứ tự (<ol>):
+        Khái niệm: Dùng để tạo danh sách mà các mục có thứ tự rõ ràng.
+        Các mục được đánh số thứ tự tự động.
+        Ví dụ:
+        <ol>
+            <li>Mục 1</li>
+            <li>Mục 2</li>
+        </ol>
+
+  + Thẻ biểu mẫu (Form):
+    Khái niệm: Dùng để thu thập thông tin từ người dùng.
+    Các thuộc tính quan trọng:
+      + action: Đường dẫn đến trang xử lý dữ liệu.
+      + method: Phương thức gửi dữ liệu (GET hoặc POST).
+
+    Các thẻ nhập liệu phổ biến:
+      <input type="text">: Ô nhập văn bản.
+      <input type="password">: Ô nhập mật khẩu.
+      <input type="email">: Ô nhập email.
+      <input type="radio">: Nút chọn một trong nhiều lựa chọn.
+      <input type="checkbox">: Hộp kiểm chọn nhiều lựa chọn.
+      <input type="submit">: Nút gửi biểu mẫu.
+
+
+  + Thẻ bảng (Table):
+    Khái niệm: Dùng để hiển thị dữ liệu dạng bảng.
+    Các thành phần chính:
+      <table>: Khởi tạo bảng.
+      <tr> (Table Row): Xác định hàng trong bảng.
+      <th> (Table Header): Ô tiêu đề, thường hiển thị chữ đậm.
+      <td> (Table Data): Ô dữ liệu trong bảng.
+      <thead>: Phần đầu bảng, chứa tiêu đề cột.
+      <tbody>: Phần thân bảng, chứa dữ liệu chính.
+      <tfoot>: Phần chân bảng, thường chứa tổng kết.
+
+
+  <div>: Thẻ khối, thường dùng để tạo bố cục trang.
+
+Ví dụ: <div style="background: gray;">Khối div</div>
+
+
+3./ HTML Semantic: là cách sử dụng các thẻ HTML có ý nghĩa rõ ràng về mặt nội dung, giúp trình duyệt và công cụ tìm kiếm hiểu được mục đích của trang web.
+    + Lợi ích của HTML Semantic: 
+      Cải thiện SEO: Các công cụ tìm kiếm dễ hiểu nội dung hơn.
+      Tăng khả năng truy cập: Hỗ trợ tốt hơn cho trình đọc màn hình và thiết bị hỗ trợ.
+      Dễ bảo trì: Mã nguồn có cấu trúc rõ ràng, dễ đọc.
+
+    + Một số thẻ HTML Semantic quan trọng: 
+      header, nav, main, section, article, aside, footer
+
+
+      

@@ -1,0 +1,127 @@
+1. Css Layout:
+  Gồm 4 phần chính: header , navigation bar, content, footer 
+  
+  + Header: Một tiêu đề thường được đặt ở đầu trang web (hoặc ngay bên dưới menu điều hướng hàng đầu). Nó thường chứa logo hoặc tên trang web
+
+  + Navigation Bar: Một thanh điều hướng chứa một danh sách các liên kết để giúp khách truy cập điều hướng qua trang web của bạn
+
+  + Content: chứa nội dung chính của trang
+    + Bố cục tuỳ thuộc không cố định: 
+        1-column (often used for mobile browsers)
+        2-column (often used for tablets and laptops)
+        3-column layout (only used for desktops)
+
+  + Footer: đặt dưới cùng trang, thường chứa thông tin liên lạc, bản quyền ...
+
+
+2. Typography
+    + font-family : khai báo font chữ sử dụng
+    + font-weight: độ đậm kí tự, giá trị càng lớn thì càng đậm
+    + font-size : kích thước;
+    + line-height: chiều của line tỷ lệ với kích thước văn bản, là một thuộc tính kế thừa, khai bao nó một lần ở phần tử gốc, và nó sẽ ảnh hưởng đến tất cả các phần tử con
+        Ví dụ: 
+            body{ 
+                font-size: 15px; 
+                line-height: 1.4; // 15px * 1.4 = 21px
+            }
+            .inner-class{ 
+                font-size: 30px; 
+                // 30px(font-size) * 1.4(line-height) = 42px (total line-height)
+            }
+    + font-style: định dạng kiểu dáng của chữ
+    + color: màu sắc
+
+3. Flexbox
+    + 1 Flexbox luôn bao gồm: Flex Container (thẻ cha) và Flex Items (các thẻ con bên trong).
+    + Những thuộc tính CSS dành cho Flex container:
+        flex-direction: Chỉ định hướng hiển thị của các mục Flex trong Flex container.
+        flex-wrap:  chỉ định xem các mục Flex có nên bọc hay không, nếu không có đủ chỗ cho chúng trên một dòng flex.
+                Ví dụ: xuống dòng nếu k đủ chỗ
+                    .flex-container {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+        flex-flow: thuộc tính viết ngắn gọn kết hợp giữa direction và wrap
+                Ví dụ: 
+                    .flex-container {
+                        display: flex;
+                        flex-flow: row wrap;    
+                    }
+        justify-content: dùng để căn chỉnh các Flex Items theo chiều ngang bên trong Flex Container.
+        align-items: dùng để căn chỉnh các phần tử con (flex items) theo trục dọc (cross axis) bên trong một flex container.
+        align-content: sử dụng để căn chỉnh khoảng cách giữa các hàng (flex lines) trong một flex container khi có nhiều hàng.
+            + align-content chỉ hoạt động khi flex-wrap: wrap; (các items phải được bọc thành nhiều hàng).
+            + Nếu chỉ có một hàng, align-content sẽ không có tác dụng
+    + Những thuộc tính CSS dành cho Flex items:
+        order: 
+            Thuộc tính đặt hàng chỉ định thứ tự của các mục Flex bên trong thùng chứa flex.
+            Mục Flex đầu tiên trong mã không phải xuất hiện dưới dạng mục đầu tiên trong bố cục.
+            Giá trị đơn hàng phải là một số, giá trị mặc định là 0.
+            Ví dụ:  <div class="flex-container">
+                        <div style="order: 3">1</div>
+                        <div style="order: 2">2</div>
+                        <div style="order: 4">3</div>
+                        <div style="order: 1">4</div>
+                    </div>
+            
+        flex-grow : xác định mức độ mở rộng (tăng kích thước) của một flex item trong flex container. Khi container có không gian trống, flex-grow sẽ quyết định item nào mở rộng nhiều hơn.
+            Ví dụ: 
+                <div class="flex-container">
+                    <div style="flex-grow: 1">1</div>
+                    <div style="flex-grow: 1">2</div>
+                    <div style="flex-grow: 8">3</div>
+                </div>
+
+        flex-shrink: quy định mức độ co lại của một flex item khi không đủ không gian trong flex container.
+            Ví dụ:  flex-shrink: 0 là không co lại
+                <div class="flex-container">
+                    <div>1</div>
+                    <div>2</div>
+                    <div style="flex-shrink: 0">3</div>
+                    <div>4</div>
+                </div>
+
+        flex-basis: Chỉ định độ dài ban đầu của flex item.
+            Ví dụ: 
+                <div class="flex-container">
+                    <div>1</div>
+                    <div>2</div>
+                    <div style="flex-basis: 200px">3</div>
+                    <div>4</div>
+                </div>
+
+        align-self: shorthand property for the flex-grow, flex-shrink, and flex-basis properties.
+            Ví dụ:
+                <div class="flex-container">
+                    <div>1</div>
+                    <div>2</div>
+                    <div style="flex: 0 0 200px">3</div>
+                    <div>4</div>
+                </div>
+
+4. Grid
+    + 1 Grid luôn chứa: grid container và grid items
+    + Có thể điều chỉnh khoảng cách giữa cách hàng, giữa các cột và giữa các cột, hàng.
+    + Các thuộc tính:
+        column-gap: chỉ định khoảng cách giữa các cột
+        row-gap: chỉ định khoảng cách giữa các hàng
+        gap: shorthand property for row-gap and column-gap
+    * Grid Columns/Rows:
+        + Line giữa cột gọi là column lines.
+        + Line giữa cột gọi là row lines.
+    * Grid Container:
+        grid-template-columns: xác định số lượng cột trong CSS Grid và đặt kích thước của từng cột.
+        grid-template-rows: xác định số hàng (row) trong CSS Grid và đặt kích thước của từng hàng.
+        có các thuộc tính tương tự flex như : align-content, justify-content, place-content
+    * Grid Item:
+        grid-area: shorthand property for the grid-row-start, grid-column-start, grid-row-end and the grid-column-end properties.
+            grid-row-start / grid-column-start / grid-row-end / grid-column-end.
+        justify-self: căn chỉnh nội dung của một item dọc theo trục dọc.
+
+5. Quy chuẩn đặt tên BEM (Block - Element - Modifier)
+    .block {}                   /* Block chính */
+    .block__element {}          /* Element bên trong Block */
+    .block--modifier {}         /* Modifier của Block */
+    .block__element--modifier {} /* Modifier của Element */
+
+
